@@ -7,13 +7,15 @@ class Thing(models.Model):
         unique = True,
         blank = False,
     )
+
     description = models.CharField(
         max_length = 120,
         unique = False,
-        blank = False,
+        blank = True,
     )
+
     quantity = models.IntegerField(
-        unique = True,
+        unique = False,
         validators = [
             MinValueValidator(0),
             MaxValueValidator(100)
